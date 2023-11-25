@@ -1,0 +1,9 @@
+{
+    "name": "LCUltrawide",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/stefan750/LCUltrawide",
+    "description": "Adds support for ultrawide monitors (or any other resolution and aspect ratio), and allows changing the size and aspect ratio of the ingame HUD",
+    "dependencies": [
+        "BepInEx-BepInExPack-5.4.2100"
+    ]
+}
