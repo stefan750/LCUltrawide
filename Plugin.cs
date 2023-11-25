@@ -28,7 +28,10 @@ namespace LCUltrawide
 
             configResW = Config.Bind("Resolution", "Width", 860, "Horizontal rendering resolution");
             configResH = Config.Bind("Resolution", "Height", 520, "Vertical rendering resolution");
-            
+
+            // Calculate new aspect ratio
+            fNewAspect = configResW.Value / (float)configResH.Value;
+
             configUIScale = Config.Bind("UI", "Scale", 3.2f, "Changes the size of UI elements on the screen");
             configUIAspect = Config.Bind("UI", "AspectRatio", 1.77f, "Changes the aspect ratio of the ingame HUD, a higher number makes the HUD wider (4:3 = 1.33, 16:9 = 1.77, 21:9 = 2.33, 32:9 = 3.55)");
 
