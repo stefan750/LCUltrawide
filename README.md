@@ -6,7 +6,6 @@ This mod makes some changes to the games rendering and UI to enable better suppo
 ## Features
 
 - Modify the games rendering resolution with full support for aspect ratios other than 16:9
-- Improve visibility by increasing the resolution (at the cost of performance)
 - Allows changing of HUD scale and aspect ratio
 - Fixes the inventory slots being slightly misaligned on some monitors
 - More robust code for the Scanner HUD to ensure correct position of markers
