@@ -15,7 +15,7 @@ This mod makes some changes to the games rendering and UI to enable better suppo
 ## Installation
 
 1. Make sure you have **BepInEx** installed for the game (see https://thunderstore.io/c/lethal-company/p/BepInEx/BepInExPack/)
-2. Download the latest release of the mod from the releases page
+2. Download the [latest release](https://github.com/stefan750/LCUltrawide/releases/latest) of the mod from the releases page
 3. Navigate to the games install folder (you can right click the game in your Steam library, select "Manage" and then "Browse Local Files" to easily find it)
 4. Copy the downloaded **LCUltrawide.dll** to the **BepInEx/plugins/** folder
 5. Launch the game once with the mod installed to generate the config file
