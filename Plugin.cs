@@ -35,8 +35,16 @@ namespace LCUltrawide
         [HarmonyPrefix]
         static void PlayerControllerStart(PlayerControllerB __instance)
         {
-            //Change camera render texture resolution
+            //Change camera render texture resolution and terminal resolution
             RenderTexture screenTex = __instance.gameplayCamera.targetTexture;
+            RenderTexture terminalTexHighRes = GameObject.Find("TerminalScript").GetComponent<Terminal>().playerScreenTexHighRes;
+            RenderTexture terminalTex = GameObject.Find("TerminalScript").GetComponent<Terminal>().playerScreenTex;
+            
+            terminalTex.width = configResW.Value;
+            terminalTex.height = configResH.Value;
+
+            terminalTexHighRes.width = configResW.Value;
+            terminalTexHighRes.height = configResH.Value;
 
             screenTex.width = configResW.Value;
             screenTex.height = configResH.Value;
