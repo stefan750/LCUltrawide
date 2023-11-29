@@ -17,6 +17,10 @@ namespace LCUltrawide
         private static ConfigEntry<float> configUIScale;
         private static ConfigEntry<float> configUIAspect;
 
+        // Aspect Ratio
+        public static float fDefaultAspect = 860 / (float)520;
+        public static float fNewAspect;
+
         private void Awake()
         {
             // Plugin startup logic
@@ -24,7 +28,10 @@ namespace LCUltrawide
 
             configResW = Config.Bind("Resolution", "Width", 860, "Horizontal rendering resolution");
             configResH = Config.Bind("Resolution", "Height", 520, "Vertical rendering resolution");
-            
+
+            // Calculate new aspect ratio
+            fNewAspect = configResW.Value / (float)configResH.Value;
+
             configUIScale = Config.Bind("UI", "Scale", 3.2f, "Changes the size of UI elements on the screen");
             configUIAspect = Config.Bind("UI", "AspectRatio", 1.77f, "Changes the aspect ratio of the ingame HUD, a higher number makes the HUD wider (4:3 = 1.33, 16:9 = 1.77, 21:9 = 2.33, 32:9 = 3.55)");
 
@@ -78,6 +85,20 @@ namespace LCUltrawide
                     rectTransform.anchorMax = new Vector2(0.5f, 0f);
                     rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
                     rectTransform.pivot = new Vector2(0.5f, 0f);
+                }
+            }
+
+            //Scale up width of helmet model
+            GameObject helmetModel = GameObject.Find("ScavengerHelmet");
+            if (helmetModel != null)
+            {
+                if (helmetModel.TryGetComponent<Transform>(out Transform transform))
+                {
+                    float fDefaultHelmetWidth = 0.5136268f;
+                    Vector3 helmetScale = transform.localScale;
+                    // Helmet width is good up until an aspect ratio of 1.925~
+                    helmetScale.x = fDefaultHelmetWidth * (fNewAspect / 1.925f);
+                    transform.localScale = helmetScale;
                 }
             }
         }
