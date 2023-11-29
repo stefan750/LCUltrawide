@@ -8,6 +8,7 @@
     <Authors>stefan750</Authors>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,4 +33,8 @@
       <HintPath>lib\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
+  
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if &quot;$(Configuration)&quot; == &quot;Debug&quot; (copy &quot;$(TargetPath)&quot; &quot;%25appdata%25\r2modmanPlus-local\LethalCompany\profiles\Test\BepInEx\plugins\&quot;)" />
+  </Target>
 </Project>
