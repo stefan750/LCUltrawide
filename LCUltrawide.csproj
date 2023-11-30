@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>LCUltrawide</AssemblyName>
     <Description>A mod that allows changing of the resolution and aspect ratio of the game and UI elements</Description>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>stefan750</Authors>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
