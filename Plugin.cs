@@ -103,7 +103,17 @@ namespace LCUltrawide
             {
                 if (hudObject.TryGetComponent(out AspectRatioFitter arf))
                 {
-                    arf.aspectRatio = configUIAspect.Value > 0 ? configUIAspect.Value : (newAspect * 0.9f);
+                    arf.aspectRatio = configUIAspect.Value > 0 ? configUIAspect.Value : newAspect;
+                }
+            }
+
+            //Fix stretched HUD elements
+            GameObject uiCameraObject = GameObject.Find("Systems/UI/UICamera");
+            if (uiCameraObject != null)
+            {
+                if (uiCameraObject.TryGetComponent(out Camera uiCamera))
+                {
+                    uiCamera.fieldOfView = Math.Min(106 / (configUIAspect.Value > 0 ? configUIAspect.Value : newAspect), 60);
                 }
             }
 
