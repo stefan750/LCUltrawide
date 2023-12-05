@@ -167,7 +167,8 @@ namespace LCUltrawide
                 Vector2 canvasSize = __instance.playerScreenTexture.canvas.renderingDisplaySize;
                 float currentAspect = canvasSize.x / canvasSize.y;
 
-                if (currentAspect != prevAspect)
+                //Use approximate equals because '==' operator sometimes causes issues with floating point numbers
+                if (!Mathf.Approximately(currentAspect, prevAspect))
                 {
                     ChangeAspectRatio(currentAspect);
                     prevAspect = currentAspect;
