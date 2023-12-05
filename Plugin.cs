@@ -137,8 +137,8 @@ namespace LCUltrawide
                 if (helmetModel.TryGetComponent<Transform>(out Transform transform))
                 {
                     Vector3 helmetScale = transform.localScale;
-                    // Helmet width is good up until an aspect ratio of 2.5~
-                    helmetScale.x = fDefaultHelmetWidth * Math.Max(newAspect / 2.5f, 1);
+                    // Helmet width is good up until an aspect ratio of 2.3~
+                    helmetScale.x = fDefaultHelmetWidth * Math.Max(newAspect / 2.3f, 1);
                     transform.localScale = helmetScale;
                 }
             }
