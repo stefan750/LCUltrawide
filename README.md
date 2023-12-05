@@ -21,5 +21,25 @@ This mod makes some changes to the games rendering and UI to enable support for 
 
 ## Usage
 
-By default the mod will take the original game resolution and automatically scale it to fit your monitor.
+By default the mod will take the original game resolution and automatically scale it to fit your monitor.  
 Optionally you can change the resolution and UI scale and aspect ratio in the mods config file **BepInEx/config/LCUltrawide.cfg**.
+
+## Update Notes
+
+### 1.1.1
+- Fixed UI elements being too far from screen edge by default
+- Fixed aspect ratio not applying correctly when rejoining games
+- Fixed aspect ratio sometimes updating even if window size has not changed
+- Made helmet slightly less intrusive on wider monitors
+
+### 1.1.0
+- Auto detect aspect ratio and adjust to window size changes in real time
+- Improved UI scaling consistency across different aspect ratios
+- Helmet visor model is now scaled with aspect ratio
+- Fixed wrong aspect ratio when using the Terminal
+- Moved hooks from PlayerControllerB to HUDManager
+- Numerous other internal changes to support automatic aspect ratio adjustment
+
+### 1.0.0
+- Support for setting a custom resolution and aspect ratio in config file
+- Support for changing UI scale and aspect ratio
