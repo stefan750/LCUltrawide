@@ -152,6 +152,9 @@ namespace LCUltrawide
             {
                 ChangeAspectRatio(1.77f);
             }
+
+            prevAspect = 0;
+            prevTime = 0;
         }
 
         [HarmonyPatch(typeof(HUDManager), "Update")]
